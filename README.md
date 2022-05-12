@@ -1,77 +1,104 @@
 # vue3-bem
+
 Simple implementation of BEM in Vue 3.x
 
+## Installation
+
+`npm i vue3-bem`
+
+## Api
 
 ```ts
-interface BemItem {
-  b?: string;
-  e?: string;
-  m?: string | string[] | {[key in string]: boolean};
-}
+useBem: function (block: string) => bem;
+
+bem: function (
+    e?: string | null,
+    m?: string | string[] | { [key in string]: boolean }
+) => string[];
 ```
 
-1. 用法一
+## Use
+
+```ts
+const bem = useBem("block");
+```
+
 ```html
-<div :class="bem('container')">
+<div :class="bem('elem', 'selected')"></div>
+```
+
+## Example
+
+### Custom block name
+
+```html
+<div :class="bem('tip')">
     <div :class="bem("wrap")"></div>
 </div>
 ```
+
+```ts
+<script>import useBem from "./useBem" const bem = useBem('tip');</script>
+```
+
 ```less
-.container {
+.tip {
     &__wrap {
-
     }
 }
 ```
 
-2. 用法二
+### Inline modfiers
+
 ```html
 <div :class="bem('container')">
-    <div :class="bem({
-        m: ["selected", "highlighted"]
-    })"></div>
+    <div :class="bem("header")"></div>
+    <div :class="bem('item',  ["selected", "highlighted"])"></div>
 </div>
 ```
+
 ```ts
-<script>
-import useBem from "./useBem"
-const bem = useBem();
-</script>
+<script>import useBem from "./useBem" const bem = useBem('tip');</script>
 ```
+
 ```less
-.container {
-    &--selected {
-
+.tip {
+    &__header {
     }
-    &--highlighted {
-
+    &__item {
+        &--selected {
+        }
+        &--highlighted {
+        }
     }
 }
 ```
 
+### Conditional modfiers
 
-2. 用法三
 ```html
 <div :class="bem('container')">
-    <div :class="bem({
-        e: "item",
-        m: ["selected", "highlighted"]
-    })"></div>
+    <div :class="bem("header")"></div>
+    <div :class="bem('item',  {"selected": true, "highlighted": highlighted})"></div>
 </div>
 ```
+
 ```ts
 <script>
-import useBem from "./useBem"
-const bem = useBem();
+    import useBem from "./useBem" const bem = useBem('tip'); const highlighted =
+    ref(false);
 </script>
 ```
+
 ```less
-.container {
-    &__item--selected {
-
+.tip {
+    &__header {
     }
-    &__item--highlighted {
-
+    &__item {
+        &--selected {
+        }
+        &--highlighted {
+        }
     }
 }
 ```

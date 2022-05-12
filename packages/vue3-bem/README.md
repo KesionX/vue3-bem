@@ -1,10 +1,13 @@
 # vue3-bem
+
 Simple implementation of BEM in Vue 3.x
 
 ## Installation
+
 `npm i vue3-bem`
 
-## API
+## Api
+
 ```ts
 useBem: function (block: string) => bem;
 
@@ -15,8 +18,9 @@ bem: function (
 ```
 
 ## Use
+
 ```ts
-const bem = useBem('block');
+const bem = useBem("block");
 ```
 
 ```html
@@ -25,28 +29,26 @@ const bem = useBem('block');
 
 ## Example
 
-### Custom block name:
+### Custom block name
 
 ```html
 <div :class="bem('tip')">
     <div :class="bem("wrap")"></div>
 </div>
 ```
+
 ```ts
-<script>
-import useBem from "./useBem"
-const bem = useBem('tip');
-</script>
+<script>import useBem from "./useBem" const bem = useBem('tip');</script>
 ```
+
 ```less
 .tip {
     &__wrap {
-
     }
 }
 ```
 
-### Inline modfiers:
+### Inline modfiers
 
 ```html
 <div :class="bem('container')">
@@ -54,29 +56,25 @@ const bem = useBem('tip');
     <div :class="bem('item',  ["selected", "highlighted"])"></div>
 </div>
 ```
+
 ```ts
-<script>
-import useBem from "./useBem"
-const bem = useBem('tip');
-</script>
+<script>import useBem from "./useBem" const bem = useBem('tip');</script>
 ```
+
 ```less
 .tip {
     &__header {
-
     }
     &__item {
         &--selected {
-
         }
         &--highlighted {
-
         }
     }
 }
 ```
 
-### Conditional modfiers:
+### Conditional modfiers
 
 ```html
 <div :class="bem('container')">
@@ -84,24 +82,22 @@ const bem = useBem('tip');
     <div :class="bem('item',  {"selected": true, "highlighted": highlighted})"></div>
 </div>
 ```
+
 ```ts
 <script>
-import useBem from "./useBem"
-const bem = useBem('tip');
-const highlighted = ref(false);
+    import useBem from "./useBem" const bem = useBem('tip'); const highlighted =
+    ref(false);
 </script>
 ```
+
 ```less
 .tip {
     &__header {
-
     }
     &__item {
         &--selected {
-
         }
         &--highlighted {
-
         }
     }
 }
