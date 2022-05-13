@@ -1,4 +1,5 @@
 import { getClassName } from "./utils";
+import "./types/index";
 
 function useBem(block: string) {
   function bem(

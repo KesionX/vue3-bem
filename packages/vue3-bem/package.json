@@ -1,6 +1,6 @@
 {
   "name": "vue3-bem",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Simple implementation of BEM in Vue 3.x",
   "main": "./dist/es/index.js",
   "module": "./dist/es/index.js",
@@ -20,6 +20,9 @@
     "clear": "rm -rf dist",
     "build": "pnpm clear | rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "@vue/runtime-core": "*"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.3.0",

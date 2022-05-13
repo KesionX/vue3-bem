@@ -4,20 +4,46 @@ Making vue3-bem run in vite.
 
 ## Feature
 
-- No need to import vue3-bem
+- remove import vue3-bem
 
 ## Use
+It is only written with 'script setup', set attr `bem-block` as block. 
 
+use it as follow.
+
+setting in vite.config.js.
 ```js
+// vite.config.js
 import ViteVue3Bem from "vite-plugin-vue3-bem";
 
 plugins:[
     ViteVue3Bem()
 ]
-
 ```
 
-```html
-<script lang="ts" bem-block="block-name">
+in SFC
+```js
+// like it
+<template> 
+    <div class="tip">
+        <div :class="bem('wrap')"></div>
+    </div>
+</template>
+
+<script lang="ts" bem-block="tip">
+</script>
+
+```
+```js
+// equivalent to
+<template> 
+    <div class="tip">
+        <div :class="bem('wrap')"></div>
+    </div>
+</template>
+
+<script lang="ts" bem-block="tip">
+import useBem from "./useBem";
+const bem = useBem('tip');
 </script>
 ```

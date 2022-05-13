@@ -6,6 +6,9 @@ import typescript from "rollup-plugin-typescript2";
  */
 const config = {
     input: './src/index.ts',
+    external: [
+        /@vue\/runtime-core/,
+    ],
     output: [{
         format: "cjs",
         dir: "dist/cjs",
