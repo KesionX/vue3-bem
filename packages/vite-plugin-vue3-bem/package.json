@@ -1,0 +1,38 @@
+{
+  "name": "vite-plugin-vue3-bem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KesionX/vue3-bem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KesionX/vue3-bem/issues"
+  },
+  "homepage": "https://github.com/KesionX/vue3-bem#readme",
+  "scripts": {
+    "build": "pnpm clear | tsc --project .",
+    "clear": "rm -rf .dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bem",
+    "vue3",
+    "vue3-bem",
+    "vue.js",
+    "vue3 bem",
+    "bem style",
+    "bem css",
+    "bem-name",
+    "vite-plugin-vue3-bem"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.2.33",
+    "magic-string": "^0.26.2"
+  }
+}
