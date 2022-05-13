@@ -9,12 +9,14 @@ Simple implementation of BEM in Vue 3.x
 ## Api
 
 ```ts
-useBem: function (block: string) => bem;
-
-bem: function (
+type BemFunction = function (
     e?: string | null,
     m?: string | string[] | { [key in string]: boolean }
 ) => string[];
+
+useBem: function (block: string) => BemFunction;
+
+bem: BemFunction
 ```
 
 ## Use
@@ -27,18 +29,54 @@ const bem = useBem("block");
 <div :class="bem('elem', 'selected')"></div>
 ```
 
+## Build Tools
+
+Use [vite-plugin-vue3-bem](https://github.com/KesionX/vue3-bem/tree/main/packages/vite-plugin-vue3-bem) can help you remove import.
+```js
+// like it
+<script lang="ts" bem-block="block-name">
+</script>
+
+// equivalent to
+<script lang="ts" bem-block="tip">
+import useBem from "./useBem";
+const bem = useBem('tip');
+</script>
+```
+
+```ts
+import ViteVue3Bem from "vite-plugin-vue3-bem";
+
+plugins:[
+    ViteVue3Bem()
+]
+
+```
+
+
+## Type Declaration
+
+```ts
+// env.d.ts
+import "vue3-bem";
+```
+
+
 ## Example
 
 ### Custom block name
 
 ```html
-<div :class="bem('tip')">
+<div class="tip">
     <div :class="bem("wrap")"></div>
 </div>
 ```
 
 ```ts
-<script>import useBem from "./useBem" const bem = useBem('tip');</script>
+<script setup>
+import useBem from "./useBem";
+const bem = useBem('tip');
+</script>
 ```
 
 ```less
@@ -58,7 +96,10 @@ const bem = useBem("block");
 ```
 
 ```ts
-<script>import useBem from "./useBem" const bem = useBem('tip');</script>
+<script setup>
+import useBem from "./useBem";
+const bem = useBem('tip');
+</script>
 ```
 
 ```less
@@ -85,8 +126,9 @@ const bem = useBem("block");
 
 ```ts
 <script>
-    import useBem from "./useBem" const bem = useBem('tip'); const highlighted =
-    ref(false);
+    import useBem from "./useBem";
+    const bem = useBem('tip');
+    const highlighted = ref(false);
 </script>
 ```
 
