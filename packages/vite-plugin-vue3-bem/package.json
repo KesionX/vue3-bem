@@ -1,10 +1,9 @@
 {
   "name": "vite-plugin-vue3-bem",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.6",
+  "description": "Making vue3-bem run in vite.",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KesionX/vue3-bem.git"
