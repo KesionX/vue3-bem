@@ -3,7 +3,7 @@ Simple implementation of BEM in Vue 3.x .
 
 <p align="center">
   <a target="_blank" href="https://github.com/KesionX/vue3-bem">
-    <img alt="sponsors" src="https://github.com/KesionX/vue3-bem/blob/main/logo-prod.png?raw=true">
+    <img alt="sponsors" src="https://github.com/KesionX/vue3-bem/blob/main/logo-prod-2.png?raw=true">
   </a>
 </p>
 
