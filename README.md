@@ -44,7 +44,11 @@ useBem: function (block: string) => BemFunction;
 bem: BemFunction
 ```
 
+<<<<<<< HEAD
 ## Tools
+=======
+## Using
+>>>>>>> f1a13ddcbed033ce7e446f48ee183b39601b67d0
 
 If you think it's too much trouble to write import for each component, you can use the plugin `vite-plugin-vue3-bem` so you don't need to write import `vue3-bem`.
 
