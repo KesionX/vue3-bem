@@ -7,6 +7,7 @@ Simple implementation of BEM in Vue 3.x, helps you use the BEM specification mor
     <img alt="vue3 bem" src="https://github.com/KesionX/vue3-bem/blob/main/logo-prod-2.png?raw=true">
   </a>
   <div align="center">
+    <img src="https://img.shields.io/badge/npm-v1.0.6-red"/>
     <img src="https://img.shields.io/github/issues/KesionX/vue3-bem"/>
     <img src="https://img.shields.io/github/stars/KesionX/vue3-bem"/>
     <img src="https://img.shields.io/github/license/KesionX/vue3-bem"/>
