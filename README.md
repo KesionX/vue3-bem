@@ -24,7 +24,7 @@ useBem: function (block: string) => BemFunction;
 bem: BemFunction
 ```
 
-## Use
+## Using
 
 ```ts
 const bem = useBem("block");
@@ -39,7 +39,7 @@ const bem = useBem("block");
 Use [vite-plugin-vue3-bem](https://github.com/KesionX/vue3-bem/tree/main/packages/vite-plugin-vue3-bem) can help you remove import.
 ```js
 // like it
-<script lang="ts" bem-block="block-name">
+<script lang="ts" bem-block="tip">
 </script>
 
 // equivalent to
