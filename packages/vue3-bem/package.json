@@ -1,6 +1,6 @@
 {
   "name": "vue3-bem",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple implementation of BEM in Vue 3.x",
   "main": "./dist/es/index.js",
   "module": "./dist/es/index.js",
