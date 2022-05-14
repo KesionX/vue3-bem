@@ -36,6 +36,7 @@ const bem = useBem("block");
 ## Api
 
 Use `useBem` to set the block.
+
 Use `bem` to configure elements and modfiers to return classes.
 
 ```ts
@@ -44,7 +45,7 @@ type BemFunction = function (
     m?: string | string[] | { [key in string]: boolean }
 ) => string[];
 
-useBem: function (block: string) => BemFunction;
+function useBem(block: string) => BemFunction;
 
 bem: BemFunction
 ```
@@ -56,15 +57,23 @@ If you think it's too much trouble to write import for each component, you can u
 Use [vite-plugin-vue3-bem](https://github.com/KesionX/vue3-bem/tree/main/packages/vite-plugin-vue3-bem) can help you remove import.
 
 ```js
-// like it
+// .vue
+<template>
+  <div :class="bem('elem', 'selected')"></div>
+</template>
+
 <script lang="ts" bem-block="tip">
+// do some thing
 </script>
 
-// equivalent to
-<script lang="ts" bem-block="tip">
-import useBem from "./useBem";
-const bem = useBem('tip');
-</script>
+<style lang="less"> 
+.tip {
+  &__elem {
+    &--selected {
+    }
+  }
+}
+</style>
 ```
 
 ```ts
