@@ -13,7 +13,9 @@ Simple implementation of BEM in Vue 3.x, helps you use the BEM specification mor
 `npm i vue3-bem`
 
 ## Using
+
 vue3-bem is also very easy to use. As shown below.
+
 ```ts
 // .vue
 import useBem from "vue3-bem";
@@ -30,9 +32,12 @@ const bem = useBem("block");
   }
 }
 ```
+
 ## Api
+
 Use `useBem` to set the block.
 Use `bem` to configure elements and modfiers to return classes.
+
 ```ts
 type BemFunction = function (
     e?: string | null,
@@ -44,11 +49,7 @@ useBem: function (block: string) => BemFunction;
 bem: BemFunction
 ```
 
-<<<<<<< HEAD
 ## Tools
-=======
-## Using
->>>>>>> f1a13ddcbed033ce7e446f48ee183b39601b67d0
 
 If you think it's too much trouble to write import for each component, you can use the plugin `vite-plugin-vue3-bem` so you don't need to write import `vue3-bem`.
 
