@@ -95,7 +95,7 @@ Type Declaration
 Type declaration is required in typescript to prevent error reporting.
 
 ```ts
-// main.ts
+// *.d.ts
 import "vue3-bem";
 ```
 
