@@ -25,37 +25,13 @@ function supportScriptName(code: string, _id: string) {
   };
 }
 
-function supportType(code: string, _id: string) {
-  let s: MagicString;
-  const str = () => s || (s = new MagicString(code));
-  str().append(`
-  declare module "@vue/runtime-core" {
-    export interface ComponentCustomProperties {
-      bem: (
-        e?: string | null,
-        m?: string | string[] | { [key in string]: boolean }
-      ) => string[];
-    }
-  }
-  `);
-  return {
-    map: str().generateMap(),
-    code: str().toString(),
-  };
-}
-
 const fileRegex = /\.(vue)$/;
 
 function ViteVue3BemPlugin() {
-  let isFirstTsFile = false;
   return {
     name: "vite-plugin-vue3-bem",
     enforce: "pre",
     transform(code: string, id: string) {
-      if (/\.(ts)$/.test(id) && !isFirstTsFile) {
-        isFirstTsFile = true;
-        supportType(code, id);
-      }
       if (fileRegex.test(id)) {
         return supportScriptName.call(this, code, id);
       }
