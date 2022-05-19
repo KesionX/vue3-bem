@@ -22,7 +22,7 @@ plugins:[
 ```
 
 in SFC
-```js
+```html
 // like it
 <template> 
     <div class="tip">
@@ -31,8 +31,9 @@ in SFC
 </template>
 
 <script lang="ts" bem-block="tip">
+// or <script lang="ts" block="tip">
+// or <script lang="ts" b="tip">
 </script>
-
 ```
 ```js
 // equivalent to

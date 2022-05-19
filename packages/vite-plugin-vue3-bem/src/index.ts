@@ -18,7 +18,6 @@ function supportScriptName(code: string, _id: string) {
           `
         import useBem from "vue3-bem";
         const bem = useBem("${name}");
-        const b = useBem("${name}");
         `
         );
     }
