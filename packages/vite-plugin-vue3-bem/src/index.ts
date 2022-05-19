@@ -10,7 +10,7 @@ function supportScriptName(code: string, _id: string) {
   // 只在script setup写法内作用
   if (descriptor.scriptSetup && descriptor.scriptSetup.setup) {
     const attrs = descriptor.scriptSetup.attrs;
-    const name = attrs?.["bem-block"] || attrs["b"];
+    const name = attrs?.["bem-block"] || attrs?.["b"] || attrs?.["block"];
     if (name) {
         const offset = descriptor.scriptSetup.loc.start.offset;
         str().appendLeft(
@@ -18,6 +18,7 @@ function supportScriptName(code: string, _id: string) {
           `
         import useBem from "vue3-bem";
         const bem = useBem("${name}");
+        const b = useBem("${name}");
         `
         );
     }
